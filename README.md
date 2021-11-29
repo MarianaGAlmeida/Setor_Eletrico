@@ -3,7 +3,7 @@
 
 ## Introdução
 
-Neste repositório estão reunidos arquivos para análise exploratória de dados utilizados no modelo de benchmarking utilizado pela ANEEL na regulção econômica do segmento de distribuição de energia elétrica. 
+Neste repositório estão reunidos arquivos para análise exploratória de dados utilizados no modelo de benchmarking (DEA- Data Envelopment Analysis) utilizado pela ANEEL na regulção econômica do segmento de distribuição de energia elétrica. 
 
 
 ## Dados
@@ -15,7 +15,7 @@ Os dados utilizados estão disponibilizados no site da ANEEL (Agência Nacional 
 
 ## Análise Exploratória (Python):
 
-Exploração inicial do dados: 
+Exploração inicial do arquivo BASE_CONSOLIDADA_PBL.csv contendo dados das distribuidoras concernentes ao período 2000 - 2018: 
 ```py
 import pandas as pd
 import numpy as np
@@ -24,7 +24,48 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 
 dados2000_2018 = pd.read_csv ('BASE_CONSOLIDADA_PBL.csv', sep=';', na_values='ND')
+
+dados2000_2018.describe()
 dados2000_2018.head()
+dados2000_2018.tail()
 
 ```
 
+## Plots para análise de uma distribuidora específica:
+```py
+Distrib_X = dados2000_2018.loc[dados2000_2018['EMPRESA'] == 'AMAZONAS']
+CO = Distrib_X[['ANO', '18.1.Custos_Operacionais', '18.2.Pessoal', '18.3.Materiais', '18.4.Serv_Terceiros', '18.7.Outros']]
+CO = CO.dropna()
+plt.plot( 'ANO', '18.2.Pessoal', data=CO, color='blue', linewidth=2, label="Pessoal")
+plt.plot( 'ANO', '18.3.Materiais', data=CO, color='purple', linewidth=2, label="Materiais")
+plt.plot( 'ANO', '18.4.Serv_Terceiros', data=CO, color='red', linewidth=2, label="Serv_Terceiros")
+plt.plot( 'ANO', '18.7.Outros', data=CO, color='green', linewidth=2, label="Outros")
+plt.xticks(CO['ANO'], rotation='vertical')
+plt.legend()
+plt.show()
+
+```
+![image](https://user-images.githubusercontent.com/93783315/143912595-e8fe17c3-f563-4794-a77c-cbd052e4c0ca.png)
+
+
+## 1ª análise dos produtos (outputs) utilizados no modelo DEA:
+A correlação entre os "outputs" (ou produtos) utilizados em modelos DEA é discutida em muitos trabalhos. No modelo da ANEEL, os dados utilizados como produtos são: nº de Trafos de Distribuição; Mercado Total; UC Total (nº de unidades consumidoras); Rede (estensão) e MVA Total. 
+```py
+## Matriz de correlação dos produtos
+df_produtos = dados2000_2018[["37.Rede","48.MVA_Total","43.Trafos_Distribuicao","10.Mercado_Total","6.UC_Total"]]
+corr = df_produtos.corr()
+
+## Plotando a matriz de correlação com tons de azul
+plt.figure(figsize=(5, 5))
+plt.imshow(corr, cmap='Blues', interpolation='none', aspect='auto')
+plt.colorbar() 
+plt.xticks(range(len(corr)), corr.columns, rotation='vertical')
+plt.yticks(range(len(corr)), corr.columns);
+plt.suptitle('Correlação', fontsize=15, fontweight='bold')
+plt.grid(False)
+plt.show()
+print(corr)
+
+```
+
+![image](https://user-images.githubusercontent.com/93783315/143914118-635ae5c8-a809-46dd-a3f2-768bcd1d7f45.png)
