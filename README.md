@@ -8,9 +8,9 @@ Neste repositório estão reunidos arquivos para análise exploratória de dados
 
 ## Dados
 
-Os dados utilizados estão disponibilizados no site da ANEEL (Agência Nacional de Energia Elétrica), nos links abaixo:
+Os dados utilizados estão disponibilizados no site da ANEEL (Agência Nacional de Energia Elétrica), no link abaixo:
 
-* [CP 062/2020](https://www.aneel.gov.br/consultas-publicas?p_auth=tpgjXTaM&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3477&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica) : Arquivos da Consulta Pública nº 062/2020
+* [CP 062/2020](https://www.aneel.gov.br/consultas-publicas?p_auth=tpgjXTaM&p_p_id=participacaopublica_WAR_participacaopublicaportlet&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-2&p_p_col_pos=1&p_p_col_count=2&_participacaopublica_WAR_participacaopublicaportlet_ideParticipacaoPublica=3477&_participacaopublica_WAR_participacaopublicaportlet_javax.portlet.action=visualizarParticipacaoPublica) : Arquivos da Consulta Pública nº 062/2020.
 
 
 ## Análise Exploratória (Python):
@@ -45,6 +45,7 @@ plt.legend()
 plt.show()
 
 ```
+Exemplo para a distribuidora AMAZONAS:
 ![image](https://user-images.githubusercontent.com/93783315/143912595-e8fe17c3-f563-4794-a77c-cbd052e4c0ca.png)
 
 
@@ -68,14 +69,16 @@ print(corr)
 
 ```
 
-![image](https://user-images.githubusercontent.com/93783315/143914118-635ae5c8-a809-46dd-a3f2-768bcd1d7f45.png)
+![image](https://user-images.githubusercontent.com/93783315/143915435-01ca03c0-0aae-42c6-8553-18bd203e14a8.png)
 
 
 # (R) - ANÁLISES DE DADOS DAS DISTRIBUIDORAS DE ENERGIA ELÉTRICA 
-Plots para análise do insumo para duas distribuidoras são exemplificados no arquivo em linguagem R. 
+Plots para análise do insumo para duas distribuidoras são exemplificados no arquivo Plots_distribuidoras.R . 
 
+COELCE : Componentes PMSO
 ![image](https://user-images.githubusercontent.com/93783315/143915104-56073a5c-ccb9-43f9-a1bd-b09ce5e80d11.png)
 
+ELEKTRO: Componentes PMSO
 ![image](https://user-images.githubusercontent.com/93783315/143915156-4b844a21-ac28-494b-b796-32e0233c2ffe.png)
 
 
