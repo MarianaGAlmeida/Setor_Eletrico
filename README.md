@@ -1,5 +1,5 @@
 
-# ANÁLISES DE DADOS DAS DISTRIBUIDORAS DE ENERGIA ELÉTRICA 
+# (PYTHON) - ANÁLISES DE DADOS DAS DISTRIBUIDORAS DE ENERGIA ELÉTRICA 
 
 ## Introdução
 
@@ -31,7 +31,7 @@ dados2000_2018.tail()
 
 ```
 
-## Plots para análise de uma distribuidora específica:
+## Plots para análise do INSUMO (input) "custos operacionais reais" (CO) de uma distribuidora específica:
 ```py
 Distrib_X = dados2000_2018.loc[dados2000_2018['EMPRESA'] == 'AMAZONAS']
 CO = Distrib_X[['ANO', '18.1.Custos_Operacionais', '18.2.Pessoal', '18.3.Materiais', '18.4.Serv_Terceiros', '18.7.Outros']]
@@ -48,7 +48,7 @@ plt.show()
 ![image](https://user-images.githubusercontent.com/93783315/143912595-e8fe17c3-f563-4794-a77c-cbd052e4c0ca.png)
 
 
-## 1ª análise dos produtos (outputs) utilizados no modelo DEA:
+## 1ª análise dos PRODUTOS (outputs) utilizados no modelo DEA:
 A correlação entre os "outputs" (ou produtos) utilizados em modelos DEA é discutida em muitos trabalhos. No modelo da ANEEL, os dados utilizados como produtos são: nº de Trafos de Distribuição; Mercado Total; UC Total (nº de unidades consumidoras); Rede (estensão) e MVA Total. 
 ```py
 ## Matriz de correlação dos produtos
@@ -70,5 +70,14 @@ print(corr)
 
 ![image](https://user-images.githubusercontent.com/93783315/143914118-635ae5c8-a809-46dd-a3f2-768bcd1d7f45.png)
 
-![image](https://user-images.githubusercontent.com/93783315/143914247-51fc870e-a20a-4cd1-b15e-405d4b2cc185.png)
+
+# (R) - ANÁLISES DE DADOS DAS DISTRIBUIDORAS DE ENERGIA ELÉTRICA 
+Plots para análise do insumo para duas distribuidoras são exemplificados no arquivo em linguagem R. 
+
+![image](https://user-images.githubusercontent.com/93783315/143915104-56073a5c-ccb9-43f9-a1bd-b09ce5e80d11.png)
+
+![image](https://user-images.githubusercontent.com/93783315/143915156-4b844a21-ac28-494b-b796-32e0233c2ffe.png)
+
+
+
 
