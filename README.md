@@ -59,6 +59,7 @@ A correlação entre os "outputs" (ou produtos) utilizados em modelos DEA é dis
 ```py
 ## Matriz de correlação dos produtos
 df_produtos = dados2000_2018[["37.Rede","48.MVA_Total","43.Trafos_Distribuicao","10.Mercado_Total","6.UC_Total"]]
+df_produtos = df_produtos.dropna()
 corr = df_produtos.corr()
 
 ## Plotando a matriz de correlação com tons de azul
@@ -75,6 +76,11 @@ print(corr)
 ```
 
 ![image](https://user-images.githubusercontent.com/93783315/143915435-01ca03c0-0aae-42c6-8553-18bd203e14a8.png)
+
+
+
+
+
 
 
 # (R) - ANÁLISES DE DADOS DAS DISTRIBUIDORAS DE ENERGIA ELÉTRICA 
