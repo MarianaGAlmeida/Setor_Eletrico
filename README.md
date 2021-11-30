@@ -3,7 +3,7 @@
 
 ## Introdução
 
-Neste repositório estão reunidos arquivos para análise exploratória de dados utilizados no modelo de benchmarking (DEA- Data Envelopment Analysis) utilizado pela ANEEL na regulção econômica do segmento de distribuição de energia elétrica. 
+Neste repositório estão reunidos arquivos para análise exploratória de dados utilizados no modelo de benchmarking (DEA- Data Envelopment Analysis) delineado pela ANEEL para a regulação das distribuidoras de energia elétrica.
 
 
 
@@ -76,10 +76,6 @@ print(corr)
 ```
 
 ![image](https://user-images.githubusercontent.com/93783315/143915435-01ca03c0-0aae-42c6-8553-18bd203e14a8.png)
-
-
-
-
 
 
 
