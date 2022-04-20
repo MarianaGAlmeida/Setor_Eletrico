@@ -55,7 +55,7 @@ Exemplo para a distribuidora AMAZONAS:
 
 
 ## 1ª análise dos PRODUTOS (outputs) utilizados no modelo DEA:
-A correlação entre os "outputs" (ou produtos) utilizados em modelos DEA é discutida em muitos trabalhos. No modelo da ANEEL, os dados utilizados como produtos são: nº de Trafos de Distribuição; Mercado Total; UC Total (nº de unidades consumidoras); Rede (estensão) e MVA Total. 
+A correlação entre os "outputs" (ou produtos) utilizados em modelos DEA é discutida em muitos trabalhos. No modelo da ANEEL, os dados utilizados como produtos são: nº de Trafos de Distribuição; Mercado Total; UC Total (nº de unidades consumidoras); Rede (extensão) e MVA Total. 
 ```py
 ## Matriz de correlação dos produtos
 df_produtos = dados2000_2018[["37.Rede","48.MVA_Total","43.Trafos_Distribuicao","10.Mercado_Total","6.UC_Total"]]
